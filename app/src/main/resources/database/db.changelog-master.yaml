@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: Ricardo Contreras
+      changes:
+        - createTable:
+            tableName: User
+            columns:
+              - column:
+                  name: id_User
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+              - column:
+                  name: last_Name
+                  type: varchar(255)
+                  constraints:
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+              - column:
+                  name: passwd
+                  type: varchar(255)
+                  constraints:
+              - column:
+                  name: phone
+                  type: varchar(255)
+                  constraints:
+              - column:
+                  name: addrs
+                  type: varchar(255)
+                  constraints:

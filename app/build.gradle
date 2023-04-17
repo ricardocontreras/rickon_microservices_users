@@ -1,0 +1,38 @@
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+    id "org.springframework.boot" version "3.0.5"
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+	//Spring Boot
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '3.0.5'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.0.5'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.0.5'
+	implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.20.0'
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
+
+	//testImplementation group: 'com.h2database', name: 'h2', version: '2.1.214'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.0.5'
+}
+
+testing {
+    suites {
+        // Configure the built-in test suite
+        test {
+            // Use JUnit4 test framework
+            useJUnit('4.13.2')
+        }
+    }
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'rickon_microservices_users.App'
+}
